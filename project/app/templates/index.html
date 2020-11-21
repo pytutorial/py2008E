@@ -51,8 +51,7 @@
         </div>
         {% for c in categoryList %}
           <div>
-            <input name='categoryId' value="{{c.id}}"
-                   {%if c.id == categoryId %} checked {%endif%} type="radio">
+            <input name='categoryId' value="{{c.id}}" {%if c.id == categoryId %} checked {%endif%} type="radio">
             <label>{{c.name}}</label>
           </div>
         {% endfor %}
