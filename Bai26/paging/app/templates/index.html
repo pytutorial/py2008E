@@ -1,1 +1,15 @@
-Search and paging
+<ul>
+  <form>
+    <input name="name" value="{{name}}">
+  </form>
+  {% for p in productList %}
+    <li>{{p.name}}</li>
+  {% endfor %}
+  {% if not productList %} Không tìm thấy sản phẩm nào {% endif %}
+</ul>
+<a href='/?name={{name}}&page=1'>First</a>
+<a href='/?name={{name}}&page={{page|add:-1}}'>Prev</a>
+<a href='/?name={{name}}&page={{page|add:1}}'>Next</a>
+<a href='/?name={{name}}&page={{num_page}}'>Last</a>
+<br>
+<small>Hiển thị trang {{page}} trên tổng số {{num_page}} trang</small>
