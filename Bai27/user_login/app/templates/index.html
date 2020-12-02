@@ -1,1 +1,6 @@
-Home page
+{% if user.is_authenticated %}
+  Hello {{user.username}}
+  <a href='/accounts/logout'>Log out</a>
+{% else %}
+  <a href='/accounts/login'>Log in</a>
+{% endif %}
