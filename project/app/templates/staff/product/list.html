@@ -1,1 +1,27 @@
+<!--app/templates/staff/product/list.html-->
 <h3>Danh sách sản phẩm</h3>
+<table border="1">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>Mã</td>
+      <td>Tên</td>
+      <td>Hãng sản xuất</td>
+      <td>Giá</td>
+      <td>Ảnh</td>
+      <td></td>
+    </tr>
+  </thead>
+  {% for p in productList %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{p.code}}</td>
+      <td>{{p.name}}</td>
+      <td>{{p.category.name}}</td>
+      <td>{{p.price}} đ</td>
+      <td><img src='/{{p.image}}' style='max-width: 200px;'></td>
+      <td></td>
+    </tr>
+  {% endfor %}
+</table>
+<a href="/staff/create-product">Thêm mới sản phẩm</a>

@@ -13,5 +13,13 @@ def listCategory(request): #127.0.0.1:8000/staff/list-category
     context = {'categoryList': categoryList}
     return render(request, 'staff/category/list.html', context)
 
+class ProductCreateView(CreateView):
+    model = Product
+    fields = '__all__'
+    template_name = 'staff/product/form.html'
+    success_url = '/staff'
+
 def listProduct(request):
-    return render(request, 'staff/product/list.html')
+    productList = Product.objects.all()
+    context = {'productList': productList}
+    return render(request, 'staff/product/list.html', context)
