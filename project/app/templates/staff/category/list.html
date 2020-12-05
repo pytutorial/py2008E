@@ -1,0 +1,24 @@
+<!--app/staff/category/list.html-->
+<h3>Danh sách nhóm sản phẩm</h3>
+<table border="1">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Mã</th>
+      <th>Tên</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for c in categoryList %}
+      <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{c.code}}</td>
+        <td>{{c.name}}</td>
+        <td></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<a href='/staff/create-category'>Thêm nhóm sản phẩm</a>
