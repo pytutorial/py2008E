@@ -81,7 +81,7 @@
         {% for p in productList %}
           <li class="list-item col-sm-4 mt-3">
             <div class='item-container'>
-              <a href="/product-detail?id=1" class='product-item'>
+              <a href="/product-detail?id={{p.id}}" class='product-item'>
                 <img src="/{{p.image}}" class='product-image'>
                 <div class="item-info">
                   <div>

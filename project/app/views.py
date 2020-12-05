@@ -30,4 +30,6 @@ def index(request):#/
     return render(request, 'index.html', context)
 
 def productDetail(request):
-    return render(request, 'product.html')
+    id = request.GET.get('id')
+    product = Product.objects.get(pk=id)
+    return render(request, 'product.html', {'product': product})
